@@ -2,6 +2,28 @@ import { Box, IconButton, Modal, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { motion } from 'framer-motion';
 
+const genreMap = {
+  28: "Action",
+  12: "Adventure",
+  16: "Animation",
+  35: "Comedy",
+  80: "Crime",
+  99: "Documentary",
+  18: "Drama",
+  10751: "Family",
+  14: "Fantasy",
+  36: "History",
+  27: "Horror",
+  10402: "Music",
+  9648: "Mystery",
+  10749: "Romance",
+  878: "Science Fiction",
+  10770: "TV Movie",
+  53: "Thriller",
+  10752: "War",
+  37: "Western",
+};
+
 const MotionBox = motion(Box);
 
 const MovieModal = ({ open, handleClose, movie }) => {
@@ -53,7 +75,7 @@ const MovieModal = ({ open, handleClose, movie }) => {
                         Rating: {movie.vote_average}
                     </Typography>
                     <Typography variant='body2' color='text.secondary'>
-                        Release Date: {movie.release_date}
+                        Genre: {movie.genre_ids?.map(id => genreMap[id]).join(", ") || "N/A"}
                     </Typography>
                 </Box>
             </MotionBox>
