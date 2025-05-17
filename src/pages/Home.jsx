@@ -22,6 +22,9 @@ const Home = () => {
     return (
         <>
             <Container sx={{ py: 4 }}>
+                <Typography variant='h6' color='text.secondary' textAlign='center' mb={2}>
+                        Mini Movie Searching
+                    </Typography>
                 <TextField
                     label='Search movies...'
                     fullWidth
